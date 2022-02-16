@@ -3,9 +3,9 @@ function EmployeeDetails() {
     var age = 23;
     var designation = "Developer",
     
-    var getName=function(name){name=name;}
-    var getAge=function(age){age=age;}
-    var getDesignation=function(Desig){designation=Desig;}
+    var getName=function(){return name;}
+    var getAge=function(){ return age;}
+    var getDesignation=function(){return designation;}
    
   
     return {
@@ -18,6 +18,6 @@ function EmployeeDetails() {
   
   var newEmployee = EmployeeDetails()
   
-  var userName = newEmployee.getName("amresh");
-  var userAge = newEmployee.getAge(23);
-  var userDesig = newEmployee.getDesignation("Developer"); 
+  var userName = newEmployee.name();
+  var userAge = newEmployee.age();
+  var userDesig = newEmployee.designation(); 
