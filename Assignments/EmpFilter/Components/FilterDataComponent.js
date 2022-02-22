@@ -20,8 +20,9 @@ export default class FilterDataComponent extends Component {
             <label>Filter:</label>
             <input onChange={(event) => this.nameChange(event)} /><br />
             {empList.map(function(employee) {
+                if(employee.name.includes(this.state.FilterByName))
                 return (
-                    <EmployeeDetailsComponent {...employee} filterName={this.state.FilterByName}></EmployeeDetailsComponent>
+                    <EmployeeDetailsComponent {...employee} ></EmployeeDetailsComponent>
                 )
             })}
         </>
