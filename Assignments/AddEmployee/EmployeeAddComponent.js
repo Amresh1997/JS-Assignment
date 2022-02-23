@@ -21,11 +21,11 @@ export default class EmployeeAddComponent extends React.Component {
             event.preventDefault()
             
             Axios.post('https://localhost:5001/api/Employee/AddEmp', {
-                id:this.state.id,Name:this.state.Name, sal:this.state.sal, city:this.state.city
+                eid:this.state.id,ename:this.state.Name, salary:this.state.sal, city:this.state.city
               })
               .then(function (response) {
                 alert(`
-                ____Employee Details____\n
+                ____New Employee Added____\n
                
                 Name : ${Name}
                 id : ${id}
@@ -35,7 +35,7 @@ export default class EmployeeAddComponent extends React.Component {
               })
 
            
-          }  
+          }
 
     render() {
         return (
