@@ -10,22 +10,32 @@ export default class FilterDataComponent extends Component {
         }
     }
     nameChange(event){
+        
         this.setState({
             FilterByName: event.target.value
         })
     }
-    return (){
-        <>
+    checking(employee){
+        if(employee.name.includes(this.state.FilterByName))
+                 return <EmployeeDetailsComponent {...employee} ></EmployeeDetailsComponent>
+    }
+    
+    render (){
+        return(
+            <>
             <h1>Employee List is Given Below...</h1>
             <label>Filter:</label>
             <input onChange={(event) => this.nameChange(event)} /><br />
-            {empList.map(function(employee) {
-                if(employee.name.includes(this.state.FilterByName))
-                return (
-                    <EmployeeDetailsComponent {...employee} ></EmployeeDetailsComponent>
-                )
+            {empList.map((employee)=> {
+                
+                {this.checking(employee)}
+                
+               
             })}
         </>
+
+        )
+        
 
     }
         
