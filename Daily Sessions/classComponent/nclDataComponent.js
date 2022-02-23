@@ -21,6 +21,15 @@ export default class NclDataComponent extends Component {
                     <div className="card-body">
                         <h5 className="card-title">{this.state.NLC_Data.company}</h5>
                         <div class="alert alert-primary" role="alert">
+                        Average Volume per 8 day : {this.state.NLC_Data.AvgDelVolPer_8day}
+                        </div>
+                        <div class="alert alert-primary" role="alert">
+                            Average Volume per 30 day : {this.state.NLC_Data.AvgDelVolPer_3day}
+                        </div>
+                        <div class="alert alert-primary" role="alert">
+                            Average volume qty: {this.state.NLC_Data.AvgVolQtyDel_20day}
+                        </div>
+                        <div class="alert alert-primary" role="alert">
                             Previous Price : {this.state.NLC_Data.priceprevclose}
                         </div>
                         <div class="alert alert-secondary" role="alert">
