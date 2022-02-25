@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import EmployeeDetailsComponent from "../Components/EmployeeDetailsComponent"
+import EmployeePutHook from './EmployeePutHook';
 
 
 export default function EmployeeListComponentHook() {
@@ -27,6 +28,10 @@ export default function EmployeeListComponentHook() {
 
                })
  
+            }
+            function updateEmployee(event)
+            {
+                return <EmployeePutHook dataSend={event.target.name} ></EmployeePutHook>
             }
            
     

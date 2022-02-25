@@ -7,37 +7,37 @@ export default function EmployeePutHook(props) {
     
     var [Id, setId] = useState("");
     var [Name, setName] = useState("");
-    var [salary, setAddress] = useState("");
-    var [city, setBalance] = useState("");
+    var [salary, setsalary] = useState("");
+    var [city, setcity] = useState("");
 
    
 
     useEffect(() => {
         setId(props.dataSend.Id);
         setName(props.dataSend.Name);
-        setAddress(props.dataSend.salary);
-        setBalance(props.dataSend.city);
+        setsalary(props.dataSend.salary);
+        setcity(props.dataSend.city);
         debugger;
     }, [])
 
-    const onIdChange = e => {
-        setId(e.target.value);
+    const onIdChange = (event) => {
+        setId((event).target.value);
     };
 
-    const onNameChange = e => {
-        setName(e.target.value);
+    const onNameChange = (event) => {
+        setName((event).target.value);
     };
 
-    const onsalaryChange = e => {
-        setAddress(e.target.value);
+    const onsalaryChange = (event) => {
+        setsalary((event).target.value);
     };
 
-    const oncityChange = e => {
-        setBalance(e.target.value);
+    const oncityChange = (event) => {
+        setcity((event).target.value);
     };
 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        (event).preventDefault();
         const data = {
             Id,
             Name ,
@@ -47,10 +47,8 @@ export default function EmployeePutHook(props) {
 
        
 
-        Axios
-          .post("https://localhost:5001/api/Employee/AddEmployee", data)
-          .then(res => console.log(res))
-          .catch(err => console.log(err));
+        Axios.post("https://localhost:5001/api/Employee/EditEmployee"+Id, data)
+          .then((resolve) => alert("Details Updated"));
     };
 
     return (
@@ -77,7 +75,7 @@ export default function EmployeePutHook(props) {
                     onChange={oncityChange} required />
                 <br />
 
-                <button type="submit">Add </button>
+                <button type="submit">Edit </button>
             </form>
         </div>
     );
