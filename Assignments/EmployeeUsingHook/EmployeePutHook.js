@@ -21,23 +21,23 @@ export default function EmployeePutHook(props) {
     }, [])
 
     const onIdChange = (event) => {
-        setId((event).target.value);
+        setId(event.target.value);
     };
 
     const onNameChange = (event) => {
-        setName((event).target.value);
+        setName(event.target.value);
     };
 
     const onsalaryChange = (event) => {
-        setsalary((event).target.value);
+        setsalary(event.target.value);
     };
 
     const oncityChange = (event) => {
-        setcity((event).target.value);
+        setcity(event.target.value);
     };
 
     const handleSubmit = (event) => {
-        (event).preventDefault();
+        event.preventDefault();
         const data = {
             Id,
             Name ,
